@@ -46,35 +46,6 @@ export class SettingsTab extends PluginSettingTab {
     // Settings main title
     containerEl.createEl('h1', { text: 'Omnisearch' })
 
-    /*
-     * Sponsor links - Thank you!
-     */
-
-    // Github
-    const divSponsor = containerEl.createDiv()
-    const iframe = document.createElement('iframe')
-    iframe.setAttribute('sandbox', 'allow-top-navigation-by-user-activation')
-    iframe.setAttribute('src', 'https://github.com/sponsors/scambier/button')
-    iframe.setAttribute('title', 'Sponsor scambier')
-    iframe.setAttribute('height', '35')
-    iframe.setAttribute('width', '116')
-    iframe.style.border = '0'
-    divSponsor.appendChild(iframe)
-
-    // Ko-fi
-    const a = document.createElement('a')
-    a.href = 'https://ko-fi.com/B0B6LQ2C'
-    a.target = '_blank'
-    const img = document.createElement('img')
-    img.setAttribute('height', '36')
-    img.src = 'https://cdn.ko-fi.com/cdn/kofi2.png?v=3'
-    img.alt = 'Buy Me a Coffee at ko-fi.com'
-    img.style.border = '0px'
-    img.style.height = '36px'
-    img.style.marginLeft = '1em'
-    a.appendChild(img)
-    divSponsor.appendChild(a)
-
     injectSettingsIndexing(this.plugin, settings, containerEl)
     containerEl.createEl('hr')
     injectSettingsBehavior(this.plugin, settings, containerEl)

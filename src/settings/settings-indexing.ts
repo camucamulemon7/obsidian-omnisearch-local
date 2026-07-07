@@ -24,9 +24,9 @@ export function injectSettingsIndexing(
       htmlDescription(`<div style="margin-top: 1em; color: var(--text-accent)">⚠️ Changing indexing settings will clear the cache, and requires a restart of Obsidian.</div><br/>
         ${
           textExtractor
-            ? `👍 You have installed <a href="https://github.com/scambier/obsidian-text-extractor">Text Extractor</a>, Omnisearch can use it to index PDFs and images contents.
+            ? `👍 You have installed <a href="https://github.com/scambier/obsidian-text-extractor">Text Extractor</a>, Omnisearch can use it to index PDFs, images, and Office document contents.
             <br />Text extraction only works on desktop, but the cache can be synchronized with your mobile device.`
-            : `⚠️ Omnisearch requires <a href="https://github.com/scambier/obsidian-text-extractor">Text Extractor</a> to index PDFs and images.`
+            : `⚠️ Omnisearch requires <a href="https://github.com/scambier/obsidian-text-extractor">Text Extractor</a> to index PDFs, images, and Office documents.`
         }
         ${
           aiImageAnalyzer
@@ -71,7 +71,7 @@ export function injectSettingsIndexing(
 
   // Office Documents Indexing
   const indexOfficesDesc = htmlDescription(
-    `Omnisearch will use Text Extractor to index the content of your office documents (currently <pre style="display:inline">.docx</pre> and <pre style="display:inline">.xlsx</pre>).`
+    `Omnisearch will use Text Extractor to index the content of your office documents (currently <pre style="display:inline">.docx</pre>, <pre style="display:inline">.xlsx</pre>, and <pre style="display:inline">.pptx</pre>).`
   )
   new Setting(containerEl)
     .setName(`Documents content indexing ${textExtractor ? '' : '⚠️ Disabled'}`)

@@ -1,5 +1,5 @@
 import type { CachedMetadata } from 'obsidian'
-import { getAliasesFromMetadata } from '../tools/utils'
+import { getAliasesFromMetadata, isFileOffice } from '../tools/utils'
 
 describe('Utils', () => {
   describe('getAliasesFromMetadata', () => {
@@ -45,5 +45,26 @@ describe('Utils', () => {
       // Assert
       expect(actual).toEqual([])
     })
+  })
+
+  describe('isFileOffice', () => {
+    it.each([
+      'document.docx',
+      'spreadsheet.xlsx',
+      'presentation.pptx',
+      'Presentation.PPTX',
+    ])(
+      'should return true for %s',
+      path => {
+        expect(isFileOffice(path)).toBe(true)
+      }
+    )
+
+    it.each(['note.md', 'document.pdf', 'image.png'])(
+      'should return false for %s',
+      path => {
+        expect(isFileOffice(path)).toBe(false)
+      }
+    )
   })
 })

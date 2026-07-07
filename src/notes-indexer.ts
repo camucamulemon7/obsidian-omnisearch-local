@@ -7,6 +7,7 @@ import {
   isFileBase,
   isFileFromDataloom,
   isFileImage,
+  isFileOffice,
   isFilePDF,
   logVerbose,
 } from './tools/utils'
@@ -58,13 +59,15 @@ export class NotesIndexer {
     const canIndexPDF = hasTextExtractor && settings.PDFIndexing
     const canIndexImages = hasTextExtractor && settings.imagesIndexing
     const canIndexImagesAI = hasAIImageAnalyzer && settings.aiImageIndexing
+    const canIndexOffice = hasTextExtractor && settings.officeIndexing
     return (
       this.isFilePlaintext(path) ||
       isFileCanvas(path) ||
       isFileFromDataloom(path) ||
       (canIndexPDF && isFilePDF(path)) ||
       (canIndexImages && isFileImage(path)) ||
-      (canIndexImagesAI && isFileImage(path))
+      (canIndexImagesAI && isFileImage(path)) ||
+      (canIndexOffice && isFileOffice(path))
     )
   }
 

@@ -32,6 +32,7 @@
     "eslint-plugin-obsidianmd": "^0.3.0",
     "globals": "^17.6.0",
     "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.4.1",
     "jiti": "^2.7.0",
     "obsidian": "1.12.3",
     "prettier": "^2.8.8",
