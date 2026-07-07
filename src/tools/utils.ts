@@ -168,8 +168,8 @@ export function isFilePDF(path: string): boolean {
 }
 
 export function isFileOffice(path: string): boolean {
-  const ext = getExtension(path)
-  return ext === 'docx' || ext === 'xlsx'
+  const ext = getExtension(path).toLowerCase()
+  return ext === 'docx' || ext === 'xlsx' || ext === 'pptx'
 }
 
 export function isFileCanvas(path: string): boolean {
