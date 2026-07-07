@@ -106,6 +106,10 @@ export interface OmnisearchSettings extends WeightingSettings {
   httpApiEnabled: boolean
   httpApiPort: string
   httpApiNotice: boolean
+  aiToolEnabled: boolean
+  aiToolHost: string
+  aiToolPort: string
+  aiToolApiKey: string
 
   DANGER_httpHost: string | null
   DANGER_forceSaveCache: boolean

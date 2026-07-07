@@ -56,7 +56,9 @@ export class SettingsTab extends PluginSettingTab {
       this.display()
     })
     containerEl.createEl('hr')
-    injectSettingsHttp(this.plugin, settings, containerEl)
+    injectSettingsHttp(this.plugin, settings, containerEl, () => {
+      this.display()
+    })
     containerEl.createEl('hr')
     injectSettingsDanger(this.plugin, settings, containerEl)
     containerEl.createEl('hr')
@@ -128,6 +130,10 @@ export function getDefaultSettings(app: App): OmnisearchSettings {
     httpApiEnabled: false,
     httpApiPort: '51361',
     httpApiNotice: true,
+    aiToolEnabled: false,
+    aiToolHost: '127.0.0.1',
+    aiToolPort: '8001',
+    aiToolApiKey: '',
 
     welcomeMessage: '',
     verboseLogging: false,

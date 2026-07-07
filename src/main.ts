@@ -41,6 +41,7 @@ import { SearchHistory } from './search/search-history'
 export default class OmnisearchPlugin extends Plugin {
   // FIXME: fix the type
   public apiHttpServer: null | any = null
+  public aiToolServer: null | any = null
   public settings: OmnisearchSettings = getDefaultSettings(this.app)
 
   public readonly documentsRepository: DocumentsRepository
@@ -62,13 +63,17 @@ export default class OmnisearchPlugin extends Plugin {
 
   async onload(): Promise<void> {
     this.settings = await loadSettings(this)
-    this.addSettingTab(new SettingsTab(this))
 
     if (!Platform.isMobile) {
-      import('./tools/api-server').then(
-        m => (this.apiHttpServer = m.getServer(this))
-      )
+      const [apiServer, aiToolServer] = await Promise.all([
+        import('./tools/api-server'),
+        import('./tools/ai-tool-server'),
+      ])
+      this.apiHttpServer = apiServer.getServer(this)
+      this.aiToolServer = aiToolServer.getAiToolServer(this)
     }
+
+    this.addSettingTab(new SettingsTab(this))
 
     if (isPluginDisabled(this.app)) {
       console.debug('Plugin disabled')
@@ -170,6 +175,12 @@ export default class OmnisearchPlugin extends Plugin {
       if (this.apiHttpServer && settings.httpApiEnabled) {
         this.apiHttpServer.listen(settings.httpApiPort)
       }
+      if (this.aiToolServer && settings.aiToolEnabled) {
+        this.aiToolServer.listen(
+          settings.aiToolPort,
+          settings.aiToolHost
+        )
+      }
     })
   }
 
@@ -198,7 +209,8 @@ export default class OmnisearchPlugin extends Plugin {
     if (process.env.NODE_ENV === 'production') {
       await this.database.clearCache()
     }
-    this.apiHttpServer.close()
+    this.apiHttpServer?.close()
+    this.aiToolServer?.close()
   }
 
   addRibbonButton(): void {
