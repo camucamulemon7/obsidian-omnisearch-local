@@ -6,9 +6,5 @@
 	"description": "A search engine that just works.",
 	"author": "Simon Cambier",
 	"authorUrl": "https://scambier.xyz",
-	"fundingUrl": {
-		"Github": "https://github.com/sponsors/scambier",
-		"Ko-fi": "https://ko-fi.com/scambier"
-	},
 	"isDesktopOnly": false
 }

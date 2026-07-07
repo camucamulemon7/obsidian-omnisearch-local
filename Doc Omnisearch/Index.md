@@ -20,10 +20,6 @@
 
 Omnisearch is licensed under [GPL-3](https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)). You're welcome to fork it and use its code in your own project, but you must disclose your code and publish it under the same terms.
 
-## Thanks
-
-❤ To all people who donate through [Ko-Fi](https://ko-fi.com/scambier) or [Github Sponsors](https://github.com/sponsors/scambier), to code contributors, and to the Obsidian team who graciously provides this Publish space ❤
-
 If you wish to get involved in Omnisearch's development, there are [open issues](https://github.com/scambier/obsidian-omnisearch/issues) that need to be solved, and probably several of them tagged as "[good first issue](https://github.com/scambier/obsidian-omnisearch/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)" :)
 
 

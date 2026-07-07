@@ -1,6 +1,5 @@
 # Omnisearch for Obsidian
 
-[![Sponsor me](https://img.shields.io/badge/%E2%9D%A4%20Like%20this%20plugin%3F-Sponsor%20me!-ff69b4)](https://github.com/sponsors/scambier)  
 ![Obsidian plugin](https://img.shields.io/endpoint?url=https%3A%2F%2Fscambier.xyz%2Fobsidian-endpoints%2Fomnisearch.json)
 ![GitHub release (latest by date and asset)](https://img.shields.io/github/downloads/scambier/obsidian-omnisearch/latest/main.js)  
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/scambier/obsidian-omnisearch)
@@ -68,10 +67,5 @@ _Submit a PR to add your own project!_
 ## LICENSE
 
 Omnisearch is licensed under [GPL-3](https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)).
-
-## Thanks
-
-To all people who donate through [Ko-Fi](https://ko-fi.com/scambier)
-or [Github Sponsors](https://github.com/sponsors/scambier) ❤
 
 ![JetBrains logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)
